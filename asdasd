@@ -1285,7 +1285,8 @@
 					BorderColor3 = rgb(0, 0, 0),
 					AnchorPoint = vec2(0.5, 0),
 					Position = dim2(0.5, 0, 0, 20),
-					Size = dim2(0, 157, 0, 39),
+					Size = dim2(0, 0, 0, 39),
+                    AutomaticSize = Enum.AutomaticSize.X,
 					BorderSizePixel = 0,
 					BackgroundColor3 = themes.preset.outline
 				}); 
@@ -1338,7 +1339,8 @@
 					Parent = dock_holder,
 					Name = "",
 					BackgroundTransparency = 1,
-					Size = dim2(1, 0, 1, 0),
+					Size = dim2(0, 0, 1, 0),
+                    AutomaticSize = Enum.AutomaticSize.X,
 					BorderColor3 = rgb(0, 0, 0),
 					BorderSizePixel = 0,
 					BackgroundColor3 = rgb(255, 255, 255)
