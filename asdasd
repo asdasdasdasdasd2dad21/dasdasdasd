@@ -1338,8 +1338,7 @@
 					Parent = dock_holder,
 					Name = "",
 					BackgroundTransparency = 1,
-					Size = dim2(0, 0, 1, 0),
-                    AutomaticSize = Enum.AutomaticSize.X,
+					Size = dim2(1, 0, 1, 0),
 					BorderColor3 = rgb(0, 0, 0),
 					BorderSizePixel = 0,
 					BackgroundColor3 = rgb(255, 255, 255)
@@ -1817,18 +1816,6 @@
 
 			return setmetatable(window, library)
 		end
-
-        task.wait(0.1)
-local total_width = 0
-local button_holder = library.dock_holder
-for _, button in ipairs(button_holder:GetChildren()) do
-    if button:IsA("TextButton") then
-        total_width = total_width + button.AbsoluteSize.X
-    end
-end
-local padding_count = #button_holder:GetChildren()
-total_width = total_width + (padding_count * 5) + 16
-dock_outline.Size = dim2(0, total_width, 0, 39)
 
 		function library:watermark(options) 
 			local cfg = {
