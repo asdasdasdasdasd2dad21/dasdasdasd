@@ -1285,8 +1285,7 @@
 					BorderColor3 = rgb(0, 0, 0),
 					AnchorPoint = vec2(0.5, 0),
 					Position = dim2(0.5, 0, 0, 20),
-					Size = dim2(0, 0, 0, 39),
-                    AutomaticSize = Enum.AutomaticSize.X,
+					Size = dim2(0, 157, 0, 39),
 					BorderSizePixel = 0,
 					BackgroundColor3 = themes.preset.outline
 				}); 
@@ -1818,6 +1817,18 @@
 
 			return setmetatable(window, library)
 		end
+
+        task.wait(0.1)
+local total_width = 0
+local button_holder = library.dock_holder
+for _, button in ipairs(button_holder:GetChildren()) do
+    if button:IsA("TextButton") then
+        total_width = total_width + button.AbsoluteSize.X
+    end
+end
+local padding_count = #button_holder:GetChildren()
+total_width = total_width + (padding_count * 5) + 16
+dock_outline.Size = dim2(0, total_width, 0, 39)
 
 		function library:watermark(options) 
 			local cfg = {
